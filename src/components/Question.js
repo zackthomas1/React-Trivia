@@ -10,7 +10,6 @@ const Question = (props) => {
 
     // Handlers
     const onRadioChangeHandler = (event) => {
-        console.log("Selection Changed: ", event.target.value)
         setSelectedValue(event.target.value); 
     }
 
@@ -22,8 +21,7 @@ const Question = (props) => {
         setIsSelectionCorrect(isCorrect)
         setIsAnswerSubmitted(true);
 
-        console.log("Answer Submitted: ", selectedValue)
-        console.log("Is Selected Answer Correct: ", isSelectionCorrect)
+        console.log(`Answer Submitted: ${selectedValue}\nCorrect Answer: ${props.answer}\nIs Selected Answer Correct: ${isCorrect}`)
     }
 
     const nextQuestionHandler = (event) => {

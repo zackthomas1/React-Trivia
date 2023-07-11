@@ -1,0 +1,112 @@
+{
+    "Questions": [  
+        {
+            "id": "q0", 
+            "question": "What kind of scoping does JavaScript use", 
+            "options" : [
+                "Literal", 
+                "Lexical",
+                "Segmental",
+                "Sequential"
+            ], 
+            "answer": 1 
+      },
+      {
+            "id": "q1", 
+            "question": "Which of the following keywords is used to define a variable in Javascript?", 
+            "options" : [
+                "var", 
+                "let",
+                "const",
+                "Both A and B",
+                "None of the above"
+            ], 
+            "answer": 3
+        },
+        {
+            "id": "q2", 
+            "question": "The external JavaScript file must contain the <script> tag.", 
+            "options" : [
+                "True", 
+                "False"
+            ],
+            "answer": 0 
+        },
+        {
+            "id": "q3", 
+            "question": "JavaScript File Has An Extension of", 
+            "options" : [
+                ".Java",
+                ".Js",
+                ".javascript",
+                ".xml"
+            ], 
+            "answer": 1 
+        },
+        {
+            "id": "q4", 
+            "question": "The Tag is used To Give Heading To The Table.", 
+            "options" : [
+                "Head",
+                "Td",
+                "Th",
+                "Caption"
+            ], 
+            "answer": 0 
+        },
+        {
+            "id": "q5", 
+            "question": "IsNaN() Evaluates And Argument To Determine if Given Value:", 
+            "options" : [
+                "Is Not a Null",
+                "Is Not a Number",
+                "Is Not a New Object",
+                "None Of The Above"
+            ], 
+            "answer": 1 
+        },
+        {
+            "id": "q6", 
+            "question": "Function is Used To Parse a String To Int:", 
+            "options" : [
+                "Integer.Parse",
+                "Parse.Int",
+                "None",
+                "Int.Parse"
+            ], 
+            "answer": 3
+        },
+        {
+            "id": "q7", 
+            "question": "Which Of The Dialog Box Display a Message And a Data Entry Field?", 
+            "options" : [
+                "Alert()",
+                "Confirm()",
+                "Prompt()",
+                "Msg()"
+            ], 
+            "answer": 2 
+        },
+        {
+            "id": "q8", 
+            "question": "Event is Used To Check An Empty Text Box:", 
+            "options" : [
+                "Onclick()",
+                "OnFocus()",
+                "OnBlur()"
+            ], 
+            "answer": 2 
+        },
+        {
+            "id": "q9", 
+            "question": "Method Prompt() Contain ........Number of Parameters.", 
+            "options" : [
+                "One",
+                "Two",
+                "Three",
+                "Zero"
+            ], 
+            "answer": 0 
+        }
+    ]
+}
