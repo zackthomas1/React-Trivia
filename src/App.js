@@ -25,7 +25,7 @@ const DUMMYQUESTIONS = [
       'Both A and B',
       'None of the above',
     ], 
-    answer: 2,
+    answer: 3,
   },
   {
     id: 'q3', 
@@ -51,14 +51,16 @@ function App() {
   const {id, question, options, answer} = DUMMYQUESTIONS[currentSelectedIndex]
 
   // Handlers
-  const submitAnswerHandler = (isAnswerCorrect) => {
+  const nextQuestionHandler = () => {
     // update used questions array and select a new question to display
     setUsedQuestionIndices([...usedQuestionIndices, currentSelectedIndex])
     setCurrentSelectedIndex(currentSelectedIndex + 1);
 
     // increment currentIndex
     setQuizCounter(quizCounter + 1)
+  }
 
+  const submitAnswerHandler = (isAnswerCorrect) => {
     // update the score
     if(isAnswerCorrect){
       setScoreTotal(scoreTotal + 10);
@@ -87,6 +89,7 @@ function App() {
           options={options} 
           answer={answer}
           onSubmitAnswer={submitAnswerHandler}
+          onNextQuestion={nextQuestionHandler}
         />
       </div>
     </div>
