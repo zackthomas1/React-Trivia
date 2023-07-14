@@ -1,0 +1,37 @@
+.inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem; /* Adjust the height as needed */
+}
+
+.inputs label{
+    flex: 3;
+    margin: .5rem;
+}
+
+.inputs input{
+    flex: 2 20rem;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.error{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem; /* Adjust the height as needed */
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem; /* Adjust the height as needed */
+}
+
+.content{
+
+}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Modal from "./components/ui/Modal";
-import Button from "./components/ui/Button";
+import Modal from "./ui/Modal";
+import Button from "./ui/Button";
+
+import classes from './StartModal.module.css'
 
 const StartModal = (props) => {
     // states
@@ -42,28 +44,30 @@ const StartModal = (props) => {
             onClose=""
         >
             <form onSubmit={onSubmitHandler}>
-                <div>
-                    <label htmlFor="quizLength">Number of Questions: </label>
-                    <input
-                        type="number"
-                        id="quizLength"
-                        name='quizLength'
-                        value={inputQuizLength}
-                        min='1'
-                        max={props.maxQuizLength}
-                        onChange={inputChangeHandler}
-                        onBlur={onBlurHandler}
-                    />
+                <div className={classes.content}>
+                    <div className={classes.inputs}>
+                        <label htmlFor="quizLength">Number of Questions: </label>
+                        <input
+                            type="number"
+                            id="quizLength"
+                            name='quizLength'
+                            value={inputQuizLength}
+                            min='1'
+                            max={props.maxQuizLength}
+                            onChange={inputChangeHandler}
+                            onBlur={onBlurHandler}
+                        />
+                    </div>
 
-                    <div>
+                    <div className={classes.error}>
                         {!isInputValid && isTouched && 
                             <p>Error - Input Invalid: Enter number between 0 and {props.maxQuizLength}</p>
                         }
                     </div>
-                </div>
 
-                <div>
-                    <Button type="submit" disabled={disableSubmit}>Submit</Button>
+                    <div className={classes.actions}>
+                        <Button type="submit" disabled={disableSubmit}>Submit</Button>
+                    </div>
                 </div>
             </form>
         </Modal>

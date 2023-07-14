@@ -4,8 +4,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Header from './components/Header';
 import QuestionForm from './components/QuestionForm';
 import Score from './components/Score';
-import StartModal from './StartModal';
-import EndModal from './EndModal';
+import StartModal from './components/StartModal';
+import EndModal from './components/EndModal';
 
 function App() {
   // States

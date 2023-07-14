@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust the height as needed */
+  }
+  
+  .centered_text {
+    margin-top: 0px; /* Adjust the spacing between text and button as needed */  }
+
+  .center_bttn{
+    margin-top: 0px; /* Adjust the spacing between text and button as needed */
+  }

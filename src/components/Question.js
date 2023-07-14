@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Input from './Input';
 import Button from "./ui/Button";
 
+import classes from './Question.module.css'
+
 const Question = (props) => {
     // States
     const [selectedValue, setSelectedValue] = useState(-1);
@@ -71,7 +73,7 @@ const Question = (props) => {
                             {revealAnswerTextElem}
                         </div>
 
-                        <div className='actions'>
+                        <div className={classes.actions}>
                             <Button 
                                 type='submit' 
                                 disabled={isAnswerSubmitted || selectedValue === -1}
