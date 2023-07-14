@@ -61,9 +61,8 @@ const QuestionForm = (props) => {
 
   // Handlers
   const nextQuestionHandler = () => {
-      // update used questions array and select a new question to display
+      // update used questions array
       setUsedQuestionIndices([...usedQuestionIndices, currentSelectedIndex])
-      setCurrentSelectedIndex(currentSelectedIndex + 1);
       console.log("Used Indices: ", [...usedQuestionIndices, currentSelectedIndex]);
       // increment currentIndex
       props.setQuizCounter(props.quizCounter + 1)
@@ -72,8 +71,9 @@ const QuestionForm = (props) => {
   const submitAnswerHandler = (isAnswerCorrect) => {
       // update the score
       if(isAnswerCorrect){
-      props.setScoreTotal(props.scoreTotal + 10);
+        props.setTotal(props.total + 10);
       }
+      props.onQuestionUpdate(props.quizCounter + 1)
   }
 
   return(
