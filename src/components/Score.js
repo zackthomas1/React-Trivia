@@ -1,11 +1,13 @@
 import React from "react";
 
+import Card from "./ui/Card";
+
 const Score = (props) => {
     return(
-        <div>
+        <Card>
             <p>Question {props.quizCounter} out of {props.quizLength}</p>
             <p>Score: {props.total}</p>
-        </div>
+        </Card>
     )
 }
 
