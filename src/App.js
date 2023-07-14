@@ -31,7 +31,7 @@ function App() {
     }catch(error){
       setError(error.message);
     }
-    setIsLoading(true);
+    setIsLoading(false);
   }, []);
   
   useEffect(()=>{
@@ -42,9 +42,9 @@ function App() {
     <div>
       <Header/>
         <div className='body'>
+          {isLoading && <p>Loading</p>}
           {error && <p>{error}</p>}
-
-          {!error && 
+          {!isLoading && !error && 
             <React.Fragment>
               <Score
                 quizCounter={quizCounter}
