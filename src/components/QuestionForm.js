@@ -17,7 +17,8 @@ const QuestionForm = (props) => {
     // States
     const [usedQuestionIndices, setUsedQuestionIndices] = useState([])
     const [currentSelectedIndex, setCurrentSelectedIndex] = useState(0);
-  
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
     const [question, setQuestion] = useState({            
       id :'',
       question : '',
@@ -25,12 +26,8 @@ const QuestionForm = (props) => {
       answer : 0
     })
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-    
     // get request to firebase server to get question
-    const fetchQuestion = useCallback(
-      async () => {
+    const fetchQuestion = useCallback(async () => {
         setIsLoading(true);
         try{
           const response = await fetch('https://react-trivia-6d4aa-default-rtdb.firebaseio.com/Questions.json')
@@ -47,17 +44,15 @@ const QuestionForm = (props) => {
           while(usedQuestionIndices.includes(randomIndex)){
             randomIndex = GenerateRandomNumber(0,dataLength-1); 
           }
-          console.log(randomIndex)
-          console.log("Response data", data[randomIndex]); 
+          console.log("Index: ", randomIndex, "\nResponse data: ", data[randomIndex]); 
   
-          props.setMaxQuizLength(dataLength)
           setCurrentSelectedIndex(randomIndex);
           setQuestion(data[randomIndex]);
         }catch(error){
           setError(error.message);
         }
         setIsLoading(false);
-      }, [props, usedQuestionIndices])
+      }, [usedQuestionIndices])
   
     useEffect(()=>{
       fetchQuestion();
@@ -69,7 +64,7 @@ const QuestionForm = (props) => {
         // update used questions array and select a new question to display
         setUsedQuestionIndices([...usedQuestionIndices, currentSelectedIndex])
         setCurrentSelectedIndex(currentSelectedIndex + 1);
-
+        console.log("Used Indices: ", [...usedQuestionIndices, currentSelectedIndex]);
         // increment currentIndex
         props.setQuizCounter(props.quizCounter + 1)
     }
@@ -81,27 +76,22 @@ const QuestionForm = (props) => {
         }
     }
 
-    // JSX Elements
-    let questionElem = ''
-    if(isLoading){
-        questionElem = <p>Loading</p>
-    }else if(error){
-        questionElem = <p>{error}</p>
-    }else{
-        questionElem = (
-        <Question
-            id={question.id} 
-            question={question.question} 
-            options={question.options} 
-            answer={question.answer}
-            onSubmitAnswer={submitAnswerHandler}
-            onNextQuestion={nextQuestionHandler}
-        />)
-    }
-
     return(
         <Card>
-            {questionElem}
+          <div className="">
+            {isLoading && <p>Loading</p>}
+              {error && <p>{error}</p>}
+              {!isLoading && !error &&         
+                <Question
+                  id={question.id} 
+                  question={question.question} 
+                  options={question.options} 
+                  answer={question.answer}
+                  onSubmitAnswer={submitAnswerHandler}
+                  onNextQuestion={nextQuestionHandler}
+                />
+              }
+          </div>
         </Card>
     )
 }
