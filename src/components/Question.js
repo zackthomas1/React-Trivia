@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Input from './Input';
-
+import Button from "./ui/Button";
 
 const Question = (props) => {
     // States
@@ -57,9 +57,6 @@ const Question = (props) => {
         }
     }
 
-    const submitBttnElem = <button type='submit' disabled={isAnswerSubmitted || selectedValue === -1}>Submit Answer</button>
-    const nextQuestionBttnElem = <button type='button' onClick={nextQuestionHandler}>Next Question</button>
-
     return (
         <div className='question'>
             <div className='selection'>
@@ -75,8 +72,16 @@ const Question = (props) => {
                         </div>
 
                         <div className='actions'>
-                            {submitBttnElem}
-                            {!isAnswerSubmitted ? '' : nextQuestionBttnElem}
+                            <Button 
+                                type='submit' 
+                                disabled={isAnswerSubmitted || selectedValue === -1}
+                            >Submit Answer</Button>
+                            {!isAnswerSubmitted ? '' : 
+                                <Button 
+                                    type='button' 
+                                    onClick={nextQuestionHandler}
+                                >Next Question</Button>
+                            }
                         </div>
                      </fieldset>
                 </form>

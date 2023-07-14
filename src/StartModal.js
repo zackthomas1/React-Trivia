@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./components/ui/Modal";
+import Button from "./components/ui/Button";
 
 const StartModal = (props) => {
     // states
@@ -62,7 +63,7 @@ const StartModal = (props) => {
                 </div>
 
                 <div>
-                    <button type="submit" disabled={disableSubmit}>Submit</button>
+                    <Button type="submit" disabled={disableSubmit}>Submit</Button>
                 </div>
             </form>
         </Modal>

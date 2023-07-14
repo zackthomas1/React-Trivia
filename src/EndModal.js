@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "./components/ui/Modal";
+import Button from './components/ui/Button'
 
 const EndModal = (props) => {
 
@@ -12,7 +13,7 @@ const EndModal = (props) => {
             <h2>Game Over</h2>
             <p>{props.total / 10} out of {props.quizLength} answers correct</p>
             <p>Score: {props.total}</p>
-            <button type="button" onClick={restartHandler}>Restart</button>
+            <Button type="button" onClick={restartHandler}>Restart</Button>
         </Modal>
     )
 }
